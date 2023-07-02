@@ -34,27 +34,28 @@
                                           "animationStyle" : "basic",
                                           "buildOutAnimationType" : "none",
                                           "distance" : 1,
-                                          "duration" : 599999936,
+                                          "duration" : 100000000,
                                           "fadeOut" : true,
                                           "linearCoefficient" : 1,
                                           "moveEase" : "easeInOut",
                                           "respectPhysics" : false,
                                           "target" : [
-                                            "0F205B29-5442-40B0-B545-784EA81548E2"
+                                            "0F205B29-5442-40B0-B545-784EA81548E2",
+                                            "1280875C-C565-4392-AF3E-E49A472D3B4F"
                                           ]
                                         },
                                         "name" : {
                                           "type" : "hide"
                                         }
                                       },
-                                      "identifier" : "913DF143-8A21-47A1-9673-DC64033A73F2",
+                                      "identifier" : "7D720471-36B7-47EC-87C4-DF80A281BC8D",
                                       "isEnabled" : true
                                     }
                                   ],
                                   "__version" : 1
                                 }
                               ],
-                              "identifier" : "127050F3-5457-4A94-8D18-C82B46B4CF9E",
+                              "identifier" : "80F72150-1C99-4BC0-B394-A2BFA531726D",
                               "isEnabled" : true
                             }
                           ],
@@ -62,27 +63,27 @@
                         }
                       ],
                       "color" : [
-                        0.364705890417099,
-                        0.74117648601531982,
-                        0.69019609689712524,
+                        0.21568627655506134,
+                        0.72549021244049072,
+                        0.80000001192092896,
                         1
                       ],
-                      "identifier" : "F25E6CE4-3F82-4484-80A8-330A11E4AA00",
+                      "identifier" : "DCB46F12-9C6F-4199-BE96-341987177261",
                       "isEnabled" : true,
                       "isLooping" : false,
                       "isModal" : false,
-                      "name" : "mustache1 behavior",
+                      "name" : "mustacheHidden",
                       "triggers" : [
                         {
                           "__content" : [
                             {
                               "configurationBox" : {
                                 "configuration" : {
-                                  "userIdentifier" : "mustache1behavior"
+
                                 },
-                                "name" : "custom"
+                                "name" : "start"
                               },
-                              "identifier" : "39CDE575-366E-42DA-BF13-DD0E99DC331D",
+                              "identifier" : "0364782F-64F0-405B-BFA9-1C6A6ECC9239",
                               "isEnabled" : true
                             }
                           ],
@@ -307,6 +308,13 @@
                             "typeName" : "UUID",
                             "value" : "1280875C-C565-4392-AF3E-E49A472D3B4F"
                           }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "mustache2"
+                          }
                         ]
                       ]
                     },
@@ -354,21 +362,21 @@
               "title" : "Scene",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99459141492843628,
-                  5.0464610268363685e-08,
-                  -0.10386431217193604,
+                  0.99760329723358154,
+                  8.4596749161391926e-08,
+                  -0.069192953407764435,
                   0,
-                  -0.016957182437181473,
-                  0.98658287525177002,
-                  -0.16237853467464447,
+                  0.0012087356299161911,
+                  0.99984735250473022,
+                  0.017428416758775711,
                   0,
-                  0.10247055441141129,
-                  0.16326181590557098,
-                  0.98124688863754272,
+                  0.069182388484477997,
+                  -0.017470281571149826,
+                  0.9974510669708252,
                   0,
-                  0.042651854455471039,
-                  0.075141899287700653,
-                  0.6435200572013855,
+                  0.15785881876945496,
+                  0.0069121383130550385,
+                  0.68282049894332886,
                   1
                 ],
                 "sceneTransform" : [
