@@ -7,28 +7,46 @@
 
 import SwiftUI
 import RealityKit
+import ARKit
 
 struct ContentView : View {
+    @StateObject var vm = ViewModel()
+    
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        VStack{
+            ARViewContainer(vm: vm).edgesIgnoringSafeArea(.all)
+            
+            ScrollView(.horizontal){
+                HStack {
+                    VStack{
+                        Image("mustache1")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .frame(width: 110, height: 110)
+                    .onTapGesture {
+                        vm.toggleMustache1()
+                    }
+                    .background(Color.clear)
+                    .clipShape(Capsule())
+                    .padding()
+                }
+                
+            }
+            .background(.clear)
+            .frame(height: 100)
+            .onAppear(perform: vm.configureARView)
+        }
     }
 }
-
 struct ARViewContainer: UIViewRepresentable {
     
+    let vm : ViewModel
+    
     func makeUIView(context: Context) -> ARView {
-        
-        let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
-        return arView
-        
+        return vm.arView
     }
+    
     
     func updateUIView(_ uiView: ARView, context: Context) {}
     

@@ -1,3 +1,12 @@
 [
-
+  {
+    "libraryIdentifier" : "a46fee7fb675afcb815636cd062605f1",
+    "format" : "model",
+    "displayName" : "Mustache_Free_Model_Bigote.usdz"
+  },
+  {
+    "libraryIdentifier" : "ed0b63313d4365883789574eb7381461",
+    "format" : "model",
+    "displayName" : "m1.usdz"
+  }
 ]
