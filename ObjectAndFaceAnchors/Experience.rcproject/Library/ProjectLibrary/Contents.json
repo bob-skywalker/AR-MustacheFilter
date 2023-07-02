@@ -8,5 +8,10 @@
     "libraryIdentifier" : "ed0b63313d4365883789574eb7381461",
     "format" : "model",
     "displayName" : "m1.usdz"
+  },
+  {
+    "libraryIdentifier" : "fff3e872b876cab8f2da5bb2d962b191",
+    "format" : "model",
+    "displayName" : "m2.usdz"
   }
 ]

@@ -35,7 +35,7 @@ struct ContentView : View {
         VStack{
             ARViewContainer(vm: vm).edgesIgnoringSafeArea(.all)
             
-            ScrollView(.horizontal){
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack {
                     VStack{
                         Image("mustache1")
@@ -43,7 +43,8 @@ struct ContentView : View {
                             .scaledToFit()
                     }
                     .onTapGesture {
-                        print("Mustache1 Tapped!")
+//                        debugging
+//                        print("Mustache1 Tapped!")
                         vm.toggleMustache1()
                     }
                     
@@ -56,8 +57,20 @@ struct ContentView : View {
                             .scaledToFit()
                     }
                     .onTapGesture{
-                        print("Mustache2 tapped!")
+                        
+//                        debugging
+//                        print("Mustache2 tapped!")
                         vm.toggleMustache2()
+                    }
+                    .applyMustacheModifier()
+                    
+                    VStack{
+                        Image("mustache3")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .onTapGesture {
+                        vm.toggleMustache3()
                     }
                     .applyMustacheModifier()
                 }
