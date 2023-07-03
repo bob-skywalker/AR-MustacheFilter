@@ -70,7 +70,7 @@ struct ContentView : View {
                             Image(systemName: isRecording ? "stop.circle.fill" : "record.circle")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 55, height: 55).bold()
+                                .frame(width: 55, height: 55)
                                 .foregroundColor(isRecording ? .red : .white)
                             Text(isRecording ? "Stop Recording" : "Start Recording")
                                 .font(.footnote).bold()
