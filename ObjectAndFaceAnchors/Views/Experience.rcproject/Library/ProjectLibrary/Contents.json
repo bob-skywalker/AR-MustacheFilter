@@ -13,5 +13,15 @@
     "libraryIdentifier" : "fff3e872b876cab8f2da5bb2d962b191",
     "format" : "model",
     "displayName" : "m2.usdz"
+  },
+  {
+    "libraryIdentifier" : "91202dba882aefbd9191d645e3e0b3ed",
+    "format" : "model",
+    "displayName" : "m3.usdz"
+  },
+  {
+    "libraryIdentifier" : "bef35eec5818c080b87f6d47118e628b",
+    "format" : "model",
+    "displayName" : "m4.usdz"
   }
 ]

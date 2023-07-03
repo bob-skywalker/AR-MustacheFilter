@@ -112,6 +112,17 @@ struct ContentView : View {
                         vm.toggleMustache3()
                     }
                     .applyMustacheModifier()
+                    
+                    VStack{
+                        Image("mustache4")
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .onTapGesture {
+                        vm.toggleMustache4()
+                    }
+                    .applyMustacheModifier()
+
                 }
                 
             }
