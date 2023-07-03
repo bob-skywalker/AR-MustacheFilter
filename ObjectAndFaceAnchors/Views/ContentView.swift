@@ -43,15 +43,15 @@ struct ContentView : View {
                     Button {
                         if isRecording {
                             Task {
-                                do {
-                                    stopRecordingWithEdit { url in
-                                        self.url = url
-                                        shareVideo.toggle()
+                                
+                                stopRecordingWithEdit { error in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                        return
                                     }
-                                    isRecording = false
-                                } catch {
-                                    print(error.localizedDescription)
                                 }
+                                isRecording = false
+                                
                             }
                         } else {
                             
@@ -66,14 +66,22 @@ struct ContentView : View {
                             }
                         }
                     } label: {
-                        Image(systemName: isRecording ? "record.circle.fill" : "record.circle")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 55, height: 55).bold()
-                            .foregroundColor(isRecording ? .red : .white)
+                        VStack{
+                            Image(systemName: isRecording ? "stop.circle.fill" : "record.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 55, height: 55).bold()
+                                .foregroundColor(isRecording ? .red : .white)
+                            Text(isRecording ? "Stop Recording" : "Start Recording")
+                                .font(.footnote).bold()
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                        .scaleEffect(isRecording ? 1.2 : 1.0)
+                        .animation(.easeInOut(duration: 1))
                     }
                     .padding()
-
+                    
                 }
             
             ScrollView(.horizontal, showsIndicators: false){
@@ -84,8 +92,8 @@ struct ContentView : View {
                             .scaledToFit()
                     }
                     .onTapGesture {
-//                        debugging
-//                        print("Mustache1 Tapped!")
+                        //                        debugging
+                        //                        print("Mustache1 Tapped!")
                         vm.toggleMustache1()
                     }
                     
@@ -99,8 +107,8 @@ struct ContentView : View {
                     }
                     .onTapGesture{
                         
-//                        debugging
-//                        print("Mustache2 tapped!")
+                        //                        debugging
+                        //                        print("Mustache2 tapped!")
                         vm.toggleMustache2()
                     }
                     .applyMustacheModifier()
@@ -124,7 +132,7 @@ struct ContentView : View {
                         vm.toggleMustache4()
                     }
                     .applyMustacheModifier()
-
+                    
                 }
                 
             }

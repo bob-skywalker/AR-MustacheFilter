@@ -51,7 +51,7 @@ extension View{
         return nil
     }
     
-    func stopRecordingWithEdit(completion: @escaping (URL?) -> () ){
+    func stopRecordingWithEdit(completion: @escaping (Error?) -> () ){
             
             let recorder = RPScreenRecorder.shared()
             let delegate = ReplayDelegate()
@@ -63,14 +63,15 @@ extension View{
                     DispatchQueue.main.async {
                         if let root = self.rootController(){
                             root.present(controller, animated: true)
+                            completion(nil)
                         } else {
                             print("Could not find root view controller.")
-                            completion(nil)
+                            completion(err)
                         }
                     }
                 } else {
                     print("Error stopping recording: \(err?.localizedDescription ?? "Unknown error")")
-                    completion(nil)
+                    completion(err)
                 }
             }
         }
