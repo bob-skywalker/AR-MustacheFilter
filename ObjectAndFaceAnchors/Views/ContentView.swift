@@ -44,9 +44,11 @@ struct ContentView : View {
                         if isRecording {
                             Task {
                                 do {
-                                    self.url = try await stopRecording()
+                                    stopRecordingWithEdit { url in
+                                        self.url = url
+                                        shareVideo.toggle()
+                                    }
                                     isRecording = false
-                                    shareVideo.toggle()
                                 } catch {
                                     print(error.localizedDescription)
                                 }

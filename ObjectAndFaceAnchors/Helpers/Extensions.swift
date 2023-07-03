@@ -10,6 +10,13 @@ import ReplayKit
 
 //MARK: APP Recording Extensions
 
+class ReplayDelegate: NSObject, RPPreviewViewControllerDelegate{
+    
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        previewController.dismiss(animated: true)
+    }
+}
+
 extension View{
     //MARK: Start Recording
     
@@ -36,6 +43,38 @@ extension View{
         
         return url
     }
+    
+    func rootController() -> UIViewController? {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            return scene.windows.first?.rootViewController
+        }
+        return nil
+    }
+    
+    func stopRecordingWithEdit(completion: @escaping (URL?) -> () ){
+            
+            let recorder = RPScreenRecorder.shared()
+            let delegate = ReplayDelegate()
+            
+            recorder.stopRecording { controller, err in
+                if let controller = controller{
+                    controller.modalPresentationStyle = .fullScreen
+                    controller.previewControllerDelegate = delegate
+                    DispatchQueue.main.async {
+                        if let root = self.rootController(){
+                            root.present(controller, animated: true)
+                        } else {
+                            print("Could not find root view controller.")
+                            completion(nil)
+                        }
+                    }
+                } else {
+                    print("Error stopping recording: \(err?.localizedDescription ?? "Unknown error")")
+                    completion(nil)
+                }
+            }
+        }
+    
     
     func cancelRecording() {
         let recorder = RPScreenRecorder.shared()
