@@ -13,6 +13,8 @@
 		5C7EB1EE2A5210AC00767E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7EB1ED2A5210AC00767E57 /* Assets.xcassets */; };
 		5C7EB1F12A5210AC00767E57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C7EB1F02A5210AC00767E57 /* Preview Assets.xcassets */; };
 		5C7EB1F82A521D6D00767E57 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7EB1F72A521D6D00767E57 /* ViewModel.swift */; };
+		5CA544A82A524589005E62C1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA544A72A524589005E62C1 /* Extensions.swift */; };
+		5CA544AA2A524AA9005E62C1 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA544A92A524AA9005E62C1 /* ShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		5C7EB1ED2A5210AC00767E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C7EB1F02A5210AC00767E57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C7EB1F72A521D6D00767E57 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5CA544A72A524589005E62C1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5CA544A92A524AA9005E62C1 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +59,10 @@
 		5C7EB1E62A5210AB00767E57 /* ObjectAndFaceAnchors */ = {
 			isa = PBXGroup;
 			children = (
+				5C7EB1FB2A52450500767E57 /* ViewModels */,
+				5C7EB1FA2A52450000767E57 /* Views */,
+				5C7EB1F92A5244FB00767E57 /* Helpers */,
 				5C7EB1E72A5210AB00767E57 /* AppDelegate.swift */,
-				5C7EB1E92A5210AB00767E57 /* ContentView.swift */,
-				5C7EB1F72A521D6D00767E57 /* ViewModel.swift */,
-				5C7EB1EB2A5210AB00767E57 /* Experience.rcproject */,
 				5C7EB1ED2A5210AC00767E57 /* Assets.xcassets */,
 				5C7EB1EF2A5210AC00767E57 /* Preview Content */,
 			);
@@ -71,6 +75,32 @@
 				5C7EB1F02A5210AC00767E57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C7EB1F92A5244FB00767E57 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5CA544A72A524589005E62C1 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5C7EB1FA2A52450000767E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C7EB1EB2A5210AB00767E57 /* Experience.rcproject */,
+				5C7EB1E92A5210AB00767E57 /* ContentView.swift */,
+				5CA544A92A524AA9005E62C1 /* ShareSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C7EB1FB2A52450500767E57 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C7EB1F72A521D6D00767E57 /* ViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CA544A82A524589005E62C1 /* Extensions.swift in Sources */,
+				5CA544AA2A524AA9005E62C1 /* ShareSheet.swift in Sources */,
 				5C7EB1EA2A5210AB00767E57 /* ContentView.swift in Sources */,
 				5C7EB1E82A5210AB00767E57 /* AppDelegate.swift in Sources */,
 				5C7EB1F82A521D6D00767E57 /* ViewModel.swift in Sources */,
@@ -279,6 +311,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to Acess Your Microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to Access Your Photo Library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
@@ -310,6 +344,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need to Acess Your Microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need to Access Your Photo Library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = arkit;
